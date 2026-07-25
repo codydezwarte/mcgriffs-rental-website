@@ -62,13 +62,8 @@
           </div>
           <p>Choose a project category to narrow down the equipment shown below.</p>
         </div>
-        <div class="category-grid" role="list">
+        <div id="category-grid" class="category-grid" role="list" aria-live="polite">
           <button class="category-card active" type="button" data-category="all" role="listitem"><span>All</span><small>View everything</small></button>
-          <button class="category-card" type="button" data-category="lawn" role="listitem"><span>Lawn & Garden</span><small>Aerating, seeding, tilling</small></button>
-          <button class="category-card" type="button" data-category="dirt" role="listitem"><span>Dirt & Digging</span><small>Trenching, augering, moving soil</small></button>
-          <button class="category-card" type="button" data-category="cleaning" role="listitem"><span>Cleaning</span><small>Floors, siding, driveways</small></button>
-          <button class="category-card" type="button" data-category="construction" role="listitem"><span>Construction</span><small>Concrete, demolition, remodeling</small></button>
-          <button class="category-card" type="button" data-category="trailers" role="listitem"><span>Trailers & Hauling</span><small>Transport and material handling</small></button>
         </div>
       </div>
     </section>
@@ -87,71 +82,15 @@
         </div>
 
         <div class="catalog-status">
-          <p id="result-count">Showing 6 pieces of equipment</p>
+          <p id="result-count">Loading equipment…</p>
           <p class="rate-message">For current rate information, call <a href="tel:+16416374010">641-637-4010</a>.</p>
         </div>
 
-        <div id="equipment-grid" class="equipment-grid">
-          <article class="equipment-card" data-category="dirt" data-search="mini skid loader dirt landscaping material moving grading auger">
-            <div class="equipment-photo placeholder-photo"><span>Equipment photo coming soon</span></div>
-            <div class="equipment-content">
-              <div class="card-topline"><span class="availability available">Available</span><span>Dirt & Digging</span></div>
-              <h3>Mini Skid Loader</h3>
-              <p>Compact power for moving dirt, grading, landscaping, and compatible attachments.</p>
-              <div class="card-actions"><button class="button button-primary request-button" type="button" data-equipment="Mini Skid Loader">Request reservation</button><a class="text-link" href="tel:+16416374010">Call for rates</a></div>
-            </div>
-          </article>
-
-          <article class="equipment-card" data-category="dirt" data-search="trencher trench irrigation electric line drainage digging">
-            <div class="equipment-photo placeholder-photo"><span>Equipment photo coming soon</span></div>
-            <div class="equipment-content">
-              <div class="card-topline"><span class="availability limited">Limited availability</span><span>Dirt & Digging</span></div>
-              <h3>Walk-Behind Trencher</h3>
-              <p>Designed for narrow trenches used for irrigation, drainage, and underground lines.</p>
-              <div class="card-actions"><button class="button button-primary request-button" type="button" data-equipment="Walk-Behind Trencher">Request reservation</button><a class="text-link" href="tel:+16416374010">Call for rates</a></div>
-            </div>
-          </article>
-
-          <article class="equipment-card" data-category="lawn" data-search="core aerator lawn grass soil plugs seeding yard">
-            <div class="equipment-photo placeholder-photo"><span>Equipment photo coming soon</span></div>
-            <div class="equipment-content">
-              <div class="card-topline"><span class="availability available">Available</span><span>Lawn & Garden</span></div>
-              <h3>Core Aerator</h3>
-              <p>Relieves soil compaction and helps lawns absorb water, air, and nutrients.</p>
-              <div class="card-actions"><button class="button button-primary request-button" type="button" data-equipment="Core Aerator">Request reservation</button><a class="text-link" href="tel:+16416374010">Call for rates</a></div>
-            </div>
-          </article>
-
-          <article class="equipment-card" data-category="lawn" data-search="rear tine tiller garden soil landscaping tilling flower bed">
-            <div class="equipment-photo placeholder-photo"><span>Equipment photo coming soon</span></div>
-            <div class="equipment-content">
-              <div class="card-topline"><span class="availability unavailable">Currently unavailable</span><span>Lawn & Garden</span></div>
-              <h3>Rear-Tine Tiller</h3>
-              <p>Breaks up compacted soil for gardens, landscaping beds, and new planting areas.</p>
-              <div class="card-actions"><button class="button button-primary request-button" type="button" data-equipment="Rear-Tine Tiller">Request reservation</button><a class="text-link" href="tel:+16416374010">Call for rates</a></div>
-            </div>
-          </article>
-
-          <article class="equipment-card" data-category="cleaning" data-search="pressure washer cleaning siding deck driveway concrete wash">
-            <div class="equipment-photo placeholder-photo"><span>Equipment photo coming soon</span></div>
-            <div class="equipment-content">
-              <div class="card-topline"><span class="availability available">Available</span><span>Cleaning</span></div>
-              <h3>Pressure Washer</h3>
-              <p>High-pressure cleaning for concrete, decks, siding, equipment, and outdoor surfaces.</p>
-              <div class="card-actions"><button class="button button-primary request-button" type="button" data-equipment="Pressure Washer">Request reservation</button><a class="text-link" href="tel:+16416374010">Call for rates</a></div>
-            </div>
-          </article>
-
-          <article class="equipment-card" data-category="trailers" data-search="utility trailer hauling equipment material transport">
-            <div class="equipment-photo placeholder-photo"><span>Equipment photo coming soon</span></div>
-            <div class="equipment-content">
-              <div class="card-topline"><span class="availability available">Available</span><span>Trailers & Hauling</span></div>
-              <h3>Utility Trailer</h3>
-              <p>A convenient hauling option for equipment, supplies, debris, and project materials.</p>
-              <div class="card-actions"><button class="button button-primary request-button" type="button" data-equipment="Utility Trailer">Request reservation</button><a class="text-link" href="tel:+16416374010">Call for rates</a></div>
-            </div>
-          </article>
+        <div id="catalog-message" class="catalog-message" role="status">
+          <div class="catalog-spinner" aria-hidden="true"></div>
+          <div><strong>Loading McGriff's equipment…</strong><p>The catalog is connecting to the live equipment list.</p></div>
         </div>
+        <div id="equipment-grid" class="equipment-grid" aria-live="polite"></div>
         <div id="empty-state" class="empty-state" hidden>
           <h3>No equipment matched that search.</h3>
           <p>Try a different project word or call the store for help.</p>
@@ -200,6 +139,6 @@
     </form>
   </dialog>
 
-  <script src="app.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>

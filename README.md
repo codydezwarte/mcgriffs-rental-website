@@ -1,13 +1,9 @@
 # McGriff's Rental Website
 
-Separate public customer website for browsing rental equipment and submitting reservation requests.
+Public customer equipment catalog and reservation-request website for McGriff's.
 
-## Version 1.1
+## Current release
 
-- Polished responsive customer homepage
-- Project categories and equipment search
-- Reservation-request wording throughout
-- No public rental rates
-- Root-level file structure for easy Chromebook/GitHub uploads
+Version 1.2 — Live Firebase equipment catalog and dynamic equipment detail pages.
 
-This website is separate from the employee Rental Manager. Firebase integration will be added in a later release.
+The public site reads only the `publicEquipment` collection. It does not read customer records, employee records, internal rentals, rates, purchase costs, or financial information.
