@@ -136,7 +136,7 @@ function equipmentCard(item) {
     ? `<img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(item.name || 'Rental equipment')}" loading="lazy" onerror="this.parentElement.classList.add('placeholder-photo');this.remove();this.parentElement.insertAdjacentHTML('beforeend','<span>Equipment photo coming soon</span>')">`
     : '<span>Equipment photo coming soon</span>';
 
-  return `<article class="equipment-card" data-id="${escapeHtml(item.id)}">
+  return `<article class="equipment-card" data-id="${escapeHtml(item.id)}" data-detail-url="equipment.html?id=${encodeURIComponent(item.id)}" tabindex="0" role="link" aria-label="View details for ${escapeHtml(item.name || 'rental equipment')}">
     <a class="equipment-photo ${imageUrl ? '' : 'placeholder-photo'}" href="equipment.html?id=${encodeURIComponent(item.id)}" aria-label="View ${escapeHtml(item.name || 'equipment')}">${image}</a>
     <div class="equipment-content">
       <div class="card-topline"><span class="availability ${availability.className}">${escapeHtml(availability.label)}</span><span>${escapeHtml(category)}</span></div>
@@ -160,6 +160,19 @@ function renderCatalog() {
   });
 
   equipmentGrid.innerHTML = visible.map(equipmentCard).join('');
+  equipmentGrid.querySelectorAll('.equipment-card[data-detail-url]').forEach((card) => {
+    const openDetails = () => { window.location.href = card.dataset.detailUrl; };
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a, button, input, select, textarea, label')) return;
+      openDetails();
+    });
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' && !event.target.closest('a, button, input, select, textarea')) {
+        event.preventDefault();
+        openDetails();
+      }
+    });
+  });
   resultCount.textContent = `Showing ${visible.length} ${visible.length === 1 ? 'piece' : 'pieces'} of equipment`;
   emptyState.hidden = visible.length !== 0;
 
