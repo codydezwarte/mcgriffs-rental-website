@@ -22,8 +22,6 @@ const equipmentGrid = document.querySelector('#equipment-grid');
 const resultCount = document.querySelector('#result-count');
 const emptyState = document.querySelector('#empty-state');
 const catalogMessage = document.querySelector('#catalog-message');
-const requestDialog = document.querySelector('#request-dialog');
-const requestTitle = document.querySelector('#request-title');
 
 let equipment = [];
 let activeCategory = 'all';
@@ -86,7 +84,7 @@ function availabilityInfo(item) {
   }
   if (status.includes('rent')) {
     const due = formatDate(item.expectedBack);
-    return {className:'limited', label:'Currently rented', detail: due ? `Expected back ${due}.` : 'Call the store for expected availability.'};
+    return {className:'limited', label:'Currently unavailable', detail: due ? `Expected availability: ${due}.` : 'Call the store for expected availability.'};
   }
   if (status.includes('reserv')) {
     return {className:'limited', label:'Limited availability', detail:'Contact the store to confirm available dates.'};
@@ -146,7 +144,7 @@ function equipmentCard(item) {
       <p>${escapeHtml(descriptionFor(item))}</p>
       <p class="availability-detail">${escapeHtml(availability.detail)}</p>
       <div class="card-actions">
-        <button class="button button-primary request-button" type="button" data-equipment="${escapeHtml(item.name || 'this equipment')}">Request reservation</button>
+        <a class="button button-primary request-button" href="reserve-request.html?id=${encodeURIComponent(item.id)}">Request reservation</a>
         <a class="text-link" href="equipment.html?id=${encodeURIComponent(item.id)}">View details</a>
       </div>
     </div>
@@ -165,12 +163,6 @@ function renderCatalog() {
   resultCount.textContent = `Showing ${visible.length} ${visible.length === 1 ? 'piece' : 'pieces'} of equipment`;
   emptyState.hidden = visible.length !== 0;
 
-  equipmentGrid.querySelectorAll('.request-button').forEach((button) => {
-    button.addEventListener('click', () => {
-      requestTitle.textContent = `Request ${button.dataset.equipment}`;
-      if (typeof requestDialog.showModal === 'function') requestDialog.showModal();
-    });
-  });
 }
 
 function showCatalogError(error) {

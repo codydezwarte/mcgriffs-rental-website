@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Reservation Request | McGriff's Equipment Rentals</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header class="site-header"><div class="nav-wrap"><a href="index.html" class="brand-link"><img src="mcgriffs-logo.png" alt="McGriff's logo"></a><nav class="desktop-nav"><a href="index.html#projects">Browse by project</a><a href="index.html#equipment">Equipment</a><a href="tel:+16416374010" class="phone-link">Call 641-637-4010</a></nav></div></header>
+<main class="request-page"><div class="request-shell">
+<a class="back-link" id="request-back" href="index.html#equipment">← Back to equipment</a>
+<section id="request-loading" class="panel-like"><h1>Loading equipment…</h1></section>
+<section id="request-content" hidden>
+<div class="request-heading"><div><p class="eyebrow">Reservation request</p><h1>Request <span id="request-equipment-name">equipment</span></h1><p>This form submits a reservation request only. McGriff's will contact you to confirm availability.</p></div><div id="request-equipment-photo" class="request-equipment-photo"></div></div>
+<form id="reservation-request-form" class="reservation-form">
+<input type="hidden" id="request-equipment-id">
+<div class="form-section"><h2>Requested dates</h2><div class="form-grid four"><label>Pickup date<input id="pickup-date" type="date" required></label><label>Pickup time<input id="pickup-time" type="time" required></label><label>Return date<input id="return-date" type="date" required></label><label>Return time<input id="return-time" type="time" required></label></div></div>
+<div class="form-section"><h2>Your information</h2><div class="form-grid two"><label>First name<input id="first-name" autocomplete="given-name" required></label><label>Last name<input id="last-name" autocomplete="family-name" required></label><label>Phone<input id="phone" type="tel" autocomplete="tel" required></label><label>Email<input id="email" type="email" autocomplete="email" required></label><label>Business name <span class="optional">optional</span><input id="business-name" autocomplete="organization"></label><label>Project description <span class="optional">optional</span><input id="project-description" placeholder="What are you working on?"></label></div><label>Special requests or notes <span class="optional">optional</span><textarea id="notes" rows="4"></textarea></label></div>
+<label class="request-agreement"><input id="request-agreement" type="checkbox" required><span>I understand this is a reservation request only. Equipment is not reserved until McGriff's contacts me and confirms the request.</span></label>
+<div id="request-error" class="form-error" hidden></div><button id="submit-request" class="button button-primary request-submit" type="submit">Submit reservation request</button>
+</form></section>
+<section id="request-success" class="request-success" hidden><div class="success-check">✓</div><p class="eyebrow">Thank you</p><h1>Your reservation request has been received.</h1><p>A McGriff's employee will review your requested dates and contact you as soon as possible to confirm availability.</p><div class="request-number-box"><span>Reservation Request</span><strong id="success-request-number"></strong></div><p><strong>Your equipment is not reserved until McGriff's confirms your request.</strong></p><p>For immediate assistance, call <a href="tel:+16416374010">641-637-4010</a>.</p><a class="button button-primary" href="index.html#equipment">Browse more equipment</a></section>
+</div></main><footer class="site-footer"><div><strong>McGriff's Equipment Rentals</strong><p>1352 US 63, New Sharon, Iowa · 641-637-4010</p></div></footer>
+<script type="module" src="reserve-request.js"></script></body></html>

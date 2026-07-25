@@ -1,0 +1,11 @@
+Add this match block inside your existing Firestore rules service/cloud.firestore/databases/{database}/documents block. Keep your existing employee rules unchanged.
+
+match /reservationRequests/{requestId} {
+  allow create: if request.resource.data.status == "Pending"
+    && request.resource.data.equipmentId is string
+    && request.resource.data.customerName is string
+    && request.resource.data.phone is string
+    && request.resource.data.startAt is string
+    && request.resource.data.endAt is string;
+  allow read, update, delete: if request.auth != null;
+}
