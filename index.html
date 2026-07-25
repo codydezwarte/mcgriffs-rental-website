@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse equipment available from McGriff's and submit a reservation request.">
+  <title>McGriff's Equipment Rentals</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="McGriff's Equipment Rentals home">
+        <img src="images/mcgriffs-logo.png" alt="McGriff's logo">
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#projects">Browse by project</a>
+        <a href="#equipment">Equipment</a>
+        <a href="#how-it-works">How it works</a>
+        <a class="nav-call" href="tel:+16416374010">Call 641-637-4010</a>
+      </nav>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+    </div>
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="#projects">Browse by project</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="tel:+16416374010">Call 641-637-4010</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Local equipment. Helpful people.</p>
+          <h1>Get the right equipment for the job.</h1>
+          <p class="hero-copy">Browse McGriff's rental equipment, check general availability, and submit a reservation request. Our staff will review every request and contact you to confirm.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#equipment">Browse equipment</a>
+            <a class="button button-secondary" href="tel:+16416374010">Call for rate information</a>
+          </div>
+          <p class="request-note"><strong>Important:</strong> Submitting a reservation request does not guarantee availability until McGriff's confirms it.</p>
+        </div>
+        <aside class="hero-card" aria-label="Rental help">
+          <span class="hero-card-icon" aria-hidden="true">✓</span>
+          <h2>Not sure what you need?</h2>
+          <p>Tell us about your project and our staff will help you choose the right equipment.</p>
+          <a href="tel:+16416374010">Talk with McGriff's</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-light">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Start with your project</p>
+            <h2>What are you working on?</h2>
+          </div>
+          <p>Choose a project category to narrow down the equipment shown below.</p>
+        </div>
+        <div class="category-grid" role="list">
+          <button class="category-card active" type="button" data-category="all" role="listitem"><span>All</span><small>View everything</small></button>
+          <button class="category-card" type="button" data-category="lawn" role="listitem"><span>Lawn & Garden</span><small>Aerating, seeding, tilling</small></button>
+          <button class="category-card" type="button" data-category="dirt" role="listitem"><span>Dirt & Digging</span><small>Trenching, augering, moving soil</small></button>
+          <button class="category-card" type="button" data-category="cleaning" role="listitem"><span>Cleaning</span><small>Floors, siding, driveways</small></button>
+          <button class="category-card" type="button" data-category="construction" role="listitem"><span>Construction</span><small>Concrete, demolition, remodeling</small></button>
+          <button class="category-card" type="button" data-category="trailers" role="listitem"><span>Trailers & Hauling</span><small>Transport and material handling</small></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="equipment" class="section">
+      <div class="container">
+        <div class="section-heading equipment-heading">
+          <div>
+            <p class="eyebrow">Browse equipment</p>
+            <h2>Equipment catalog</h2>
+          </div>
+          <label class="search-box">
+            <span class="sr-only">Search equipment</span>
+            <input id="equipment-search" type="search" placeholder="Search by equipment or project..." autocomplete="off">
+          </label>
+        </div>
+
+        <div class="catalog-status">
+          <p id="result-count">Showing 6 pieces of equipment</p>
+          <p class="rate-message">For current rate information, call <a href="tel:+16416374010">641-637-4010</a>.</p>
+        </div>
+
+        <div id="equipment-grid" class="equipment-grid">
+          <article class="equipment-card" data-category="dirt" data-search="mini skid loader dirt landscaping material moving grading auger">
+            <div class="equipment-photo placeholder-photo"><span>Equipment photo coming soon</span></div>
+            <div class="equipment-content">
+              <div class="card-topline"><span class="availability available">Available</span><span>Dirt & Digging</span></div>
+              <h3>Mini Skid Loader</h3>
+              <p>Compact power for moving dirt, grading, landscaping, and compatible attachments.</p>
+              <div class="card-actions"><button class="button button-primary request-button" type="button" data-equipment="Mini Skid Loader">Request reservation</button><a class="text-link" href="tel:+16416374010">Call for rates</a></div>
+            </div>
+          </article>
+
+          <article class="equipment-card" data-category="dirt" data-search="trencher trench irrigation electric line drainage digging">
+            <div class="equipment-photo placeholder-photo"><span>Equipment photo coming soon</span></div>
+            <div class="equipment-content">
+              <div class="card-topline"><span class="availability limited">Limited availability</span><span>Dirt & Digging</span></div>
+              <h3>Walk-Behind Trencher</h3>
+              <p>Designed for narrow trenches used for irrigation, drainage, and underground lines.</p>
+              <div class="card-actions"><button class="button button-primary request-button" type="button" data-equipment="Walk-Behind Trencher">Request reservation</button><a class="text-link" href="tel:+16416374010">Call for rates</a></div>
+            </div>
+          </article>
+
+          <article class="equipment-card" data-category="lawn" data-search="core aerator lawn grass soil plugs seeding yard">
+            <div class="equipment-photo placeholder-photo"><span>Equipment photo coming soon</span></div>
+            <div class="equipment-content">
+              <div class="card-topline"><span class="availability available">Available</span><span>Lawn & Garden</span></div>
+              <h3>Core Aerator</h3>
+              <p>Relieves soil compaction and helps lawns absorb water, air, and nutrients.</p>
+              <div class="card-actions"><button class="button button-primary request-button" type="button" data-equipment="Core Aerator">Request reservation</button><a class="text-link" href="tel:+16416374010">Call for rates</a></div>
+            </div>
+          </article>
+
+          <article class="equipment-card" data-category="lawn" data-search="rear tine tiller garden soil landscaping tilling flower bed">
+            <div class="equipment-photo placeholder-photo"><span>Equipment photo coming soon</span></div>
+            <div class="equipment-content">
+              <div class="card-topline"><span class="availability unavailable">Currently unavailable</span><span>Lawn & Garden</span></div>
+              <h3>Rear-Tine Tiller</h3>
+              <p>Breaks up compacted soil for gardens, landscaping beds, and new planting areas.</p>
+              <div class="card-actions"><button class="button button-primary request-button" type="button" data-equipment="Rear-Tine Tiller">Request reservation</button><a class="text-link" href="tel:+16416374010">Call for rates</a></div>
+            </div>
+          </article>
+
+          <article class="equipment-card" data-category="cleaning" data-search="pressure washer cleaning siding deck driveway concrete wash">
+            <div class="equipment-photo placeholder-photo"><span>Equipment photo coming soon</span></div>
+            <div class="equipment-content">
+              <div class="card-topline"><span class="availability available">Available</span><span>Cleaning</span></div>
+              <h3>Pressure Washer</h3>
+              <p>High-pressure cleaning for concrete, decks, siding, equipment, and outdoor surfaces.</p>
+              <div class="card-actions"><button class="button button-primary request-button" type="button" data-equipment="Pressure Washer">Request reservation</button><a class="text-link" href="tel:+16416374010">Call for rates</a></div>
+            </div>
+          </article>
+
+          <article class="equipment-card" data-category="trailers" data-search="utility trailer hauling equipment material transport">
+            <div class="equipment-photo placeholder-photo"><span>Equipment photo coming soon</span></div>
+            <div class="equipment-content">
+              <div class="card-topline"><span class="availability available">Available</span><span>Trailers & Hauling</span></div>
+              <h3>Utility Trailer</h3>
+              <p>A convenient hauling option for equipment, supplies, debris, and project materials.</p>
+              <div class="card-actions"><button class="button button-primary request-button" type="button" data-equipment="Utility Trailer">Request reservation</button><a class="text-link" href="tel:+16416374010">Call for rates</a></div>
+            </div>
+          </article>
+        </div>
+        <div id="empty-state" class="empty-state" hidden>
+          <h3>No equipment matched that search.</h3>
+          <p>Try a different project word or call the store for help.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="section section-dark">
+      <div class="container">
+        <div class="section-heading light-heading">
+          <div><p class="eyebrow">Simple and clear</p><h2>How reservation requests work</h2></div>
+        </div>
+        <div class="steps-grid">
+          <article><span>1</span><h3>Choose equipment</h3><p>Browse the catalog and select the equipment that fits your project.</p></article>
+          <article><span>2</span><h3>Submit a request</h3><p>Tell us the pickup and return dates you would prefer.</p></article>
+          <article><span>3</span><h3>Wait for confirmation</h3><p>McGriff's reviews availability and contacts you before anything is confirmed.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section">
+      <div class="container contact-card">
+        <div><p class="eyebrow">Need help?</p><h2>We'll help you find the right equipment.</h2><p>Call McGriff's for rate information, availability questions, or help choosing equipment.</p></div>
+        <div class="contact-actions"><a class="button button-primary" href="tel:+16416374010">Call 641-637-4010</a><p>1352 US 63, New Sharon, Iowa</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><img src="images/mcgriffs-logo.png" alt=""><p>Equipment rentals backed by local service.</p></div>
+      <div><strong>Store hours</strong><p>Monday-Friday: 7:30 AM-5:00 PM<br>Saturday: 7:30 AM-12:00 PM<br>Sunday: Closed</p></div>
+      <div><strong>Contact</strong><p><a href="tel:+16416374010">641-637-4010</a><br>1352 US 63<br>New Sharon, IA 50207</p></div>
+    </div>
+  </footer>
+
+  <dialog id="request-dialog" class="request-dialog">
+    <form method="dialog">
+      <button class="dialog-close" value="cancel" aria-label="Close">×</button>
+      <p class="eyebrow">Reservation request</p>
+      <h2 id="request-title">Request reservation</h2>
+      <p>This first website release is the catalog foundation. The full reservation request form will be connected in the next release.</p>
+      <p>For now, call McGriff's and mention the equipment shown above.</p>
+      <a class="button button-primary full-width" href="tel:+16416374010">Call 641-637-4010</a>
+      <button class="button button-secondary full-width" value="cancel">Continue browsing</button>
+    </form>
+  </dialog>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
